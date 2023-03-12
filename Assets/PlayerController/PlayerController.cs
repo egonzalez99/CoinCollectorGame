@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed;
     public float coinSpeed;
     public float hazardSpeed;
+    public float themeSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,9 @@ public class PlayerController : MonoBehaviour
         coinMove();
 
         hazardMove();
+
+        themeMove();
+
     }
 
     private void playerMove()
@@ -42,6 +46,13 @@ public class PlayerController : MonoBehaviour
     {
 
         transform.Translate(Vector3.down * hazardSpeed * Time.deltaTime);
+
+    }
+
+    private void themeMove()
+    {
+
+        transform.Translate(Vector3.down * themeSpeed * Time.deltaTime);
 
     }
 
