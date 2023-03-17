@@ -5,22 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float playerSpeed;
-    public float coinSpeed;
-    public float hazardSpeed;
-    public float themeSpeed;
 
-    public GameObject coin;
-    public GameObject hazard;
-    public GameObject themeBox;
-
-    float minX = -5f;
-    float maxX = 5f;
-
-    float minY = 7f;
-    float maxY = 8f;
-
-    float maxSpawn = 3;
-    float spawnCounter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -33,13 +18,7 @@ public class PlayerController : MonoBehaviour
     {
 
         playerMove();
-        /*
-        SpawnCoin();
-            
-        SpawnHazard();
-
-        SpawnTheme();
-        */
+       
     }
 
     private void playerMove()
@@ -49,49 +28,29 @@ public class PlayerController : MonoBehaviour
         transform.Translate(xMove * playerSpeed * Time.deltaTime, 0, 0);
 
     }
-    /*
-    private void SpawnCoin()
+    
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (spawnCounter <= maxSpawn)
-        {
-            float randomX = Random.Range(minX, maxX);
-            float randomY = Random.Range(minY, maxY);
-            Vector3 spawnPosition = new Vector3(randomX, randomY, 0);
-            Instantiate(coin, spawnPosition, Quaternion.identity);
-
-            transform.Translate(Vector3.down * coinSpeed * Time.deltaTime);
-            spawnCounter++;
+        
+        if (other.CompareTag("Coin")) {
+            Destroy(other.gameObject);
+            
         }
-    }
-
-    private void SpawnHazard()
-    {
-        if (spawnCounter <= maxSpawn)
+        
+        if (other.CompareTag("Hazard"))
         {
-            float randomX = Random.Range(minX, maxX);
-            float randomY = Random.Range(minY, maxY);
-            Vector3 spawnPosition = new Vector3(randomX, randomY, 0);
-            Instantiate(hazard, spawnPosition, Quaternion.identity);
+            Destroy(other.gameObject);
 
-            transform.Translate(Vector3.down * hazardSpeed * Time.deltaTime);
-            spawnCounter++;
         }
-    }
 
-    private void SpawnTheme()
-    {
-        if (spawnCounter <= maxSpawn)
+        if (other.CompareTag("ThemeBox"))
         {
-            float randomX = Random.Range(minX, maxX);
-            float randomY = Random.Range(minY, maxY);
-            Vector3 spawnPosition = new Vector3(randomX, randomY, 0);
-            Instantiate(themeBox, spawnPosition, Quaternion.identity);
+            
+            Destroy(other.gameObject);
 
-            transform.Translate(Vector3.down * themeSpeed * Time.deltaTime);
-            spawnCounter++;
         }
+        
     }
-
-    */
+   
 
 }

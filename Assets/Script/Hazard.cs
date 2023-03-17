@@ -2,23 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinScript : MonoBehaviour
+public class Hazard : MonoBehaviour
 {
-    public float coinSpeed;
+    public float hazardSpeed;
 
-    public int val;
     // Start is called before the first frame update
     void Start()
     {
-       
- 
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.down * coinSpeed * Time.deltaTime);
-
+        transform.Translate(Vector3.down * hazardSpeed * Time.deltaTime);
     }
 
+    
 }
