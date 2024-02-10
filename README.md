@@ -1,5 +1,6 @@
 
 **Coin Collector Game**
+
 This is a **2D game** built in Unity where the player's objective is to collect coins while avoiding hazardous objects. The game utilizes player velocity and spawner points to load prefabs along the axis of the screen.
 
 **Features:**
