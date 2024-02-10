@@ -4,7 +4,8 @@
 This is a **2D game** built in Unity where the player's objective is to collect coins while avoiding hazardous objects. The game utilizes player velocity and spawner points to load prefabs along the axis of the screen.
 
 **Features:**
-*Collect coins to increase your score.
+
++Collect coins to increase your score.
 -Avoid hazardous objects to prevent losing points.
 -Simple yet engaging gameplay.
 
