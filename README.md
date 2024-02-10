@@ -31,6 +31,7 @@ This is a **2D game** built in Unity where the player's objective is to collect 
 **Credits:**
 
 - Game developed by Edward Gonzalez (ME).
+- Special thanks to the Unity community for their support and resources.
 
 
 **Disclaimer:**
